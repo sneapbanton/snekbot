@@ -24,7 +24,7 @@ def unvisited_neighbours(board, visited, pos):
         possible.append((r ,c+1))
     return possible
 
-def cycle_gen(board, start_pos):
+def cycle_generator(board, start_pos):
     queue = [(start_pos, [start_pos])]
     while (queue):
         pos, visited = queue.pop(-1)
@@ -43,4 +43,4 @@ if __name__ == "__main__":
     board = [[0 for i in range(width)] for j in range(height)]
     print_board(board)
     start = (0, 0) #row col
-    print(cycle_gen(board, start))
+    print(cycle_generator(board, start))
